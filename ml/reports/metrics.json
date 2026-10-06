@@ -1,0 +1,162 @@
+{
+  "data": {
+    "hosts": 240494,
+    "phishing": 84244,
+    "legitimate_phiusiil": 134792,
+    "legitimate_umbrella": 21458,
+    "train": 193523,
+    "validation": 23923,
+    "test": 23048
+  },
+  "selection": {
+    "validation_roc_auc_by_C": {
+      "0.003": 0.8874628390435195,
+      "0.01": 0.8974236829486415,
+      "0.03": 0.9017731777955882,
+      "0.1": 0.9012442973037962,
+      "0.3": 0.8967946458107372
+    },
+    "chosen_C": 0.03
+  },
+  "thresholds": {
+    "medium": 0.5626204527179145,
+    "high": 0.7786754399760011
+  },
+  "format_only_baseline": {
+    "accuracy": 0.9974720652589539,
+    "roc_auc": 0.9970901313171507
+  },
+  "test_float": {
+    "roc_auc": 0.8968672856001391,
+    "average_precision": 0.8698591943277589,
+    "phishing": 7794,
+    "legitimate": 15254,
+    "phishing_on_popular_domains": 0,
+    "legitimate_on_popular_domains": 0,
+    "tpr_high": 0.5641519117269694,
+    "fpr_high": 0.009505703422053232,
+    "fpr_high_phiusiil_legit": 0.004189421710181791,
+    "fpr_high_umbrella_legit": 0.047164811870694226,
+    "tpr_medium": 0.6714139081344624,
+    "fpr_medium": 0.05146191162973646,
+    "fpr_medium_phiusiil_legit": 0.03950026183885689,
+    "fpr_medium_umbrella_legit": 0.13619501854795973
+  },
+  "test_without_subdomain_augmentation": {
+    "roc_auc": 0.8801337047970423,
+    "average_precision": 0.8289535060926174,
+    "phishing": 7794,
+    "legitimate": 15254,
+    "phishing_on_popular_domains": 0,
+    "legitimate_on_popular_domains": 0,
+    "tpr_high": 0.6457531434436746,
+    "fpr_high": 0.07512783532188279,
+    "fpr_high_phiusiil_legit": 0.008378843420363581,
+    "fpr_high_umbrella_legit": 0.5479597244303127,
+    "tpr_medium": 0.7327431357454453,
+    "fpr_medium": 0.13065425462173855,
+    "fpr_medium_phiusiil_legit": 0.04780429415725294,
+    "fpr_medium_umbrella_legit": 0.7175410704822469
+  },
+  "test_device": {
+    "roc_auc": 0.896961225632409,
+    "average_precision": 0.8698953451061465,
+    "phishing": 7794,
+    "legitimate": 15254,
+    "phishing_on_popular_domains": 0,
+    "legitimate_on_popular_domains": 0,
+    "tpr_high": 0.5638953040800616,
+    "fpr_high": 0.009571259997377736,
+    "fpr_high_phiusiil_legit": 0.004264232812149323,
+    "fpr_high_umbrella_legit": 0.047164811870694226,
+    "tpr_medium": 0.6714139081344624,
+    "fpr_medium": 0.051330798479087454,
+    "fpr_medium_phiusiil_legit": 0.03935063963492182,
+    "fpr_medium_umbrella_legit": 0.13619501854795973
+  },
+  "test_device_with_popular_list": {
+    "roc_auc": 0.896961225632409,
+    "average_precision": 0.8698953451061465,
+    "phishing": 7794,
+    "legitimate": 15254,
+    "phishing_on_popular_domains": 276,
+    "legitimate_on_popular_domains": 1304,
+    "tpr_high": 0.5351552476263792,
+    "fpr_high": 0.006555657532450505,
+    "fpr_high_phiusiil_legit": 0.004264232812149323,
+    "fpr_high_umbrella_legit": 0.02278749337572867,
+    "tpr_medium": 0.6410059019758789,
+    "fpr_medium": 0.044119575193391894,
+    "fpr_medium_phiusiil_legit": 0.03890177302311663,
+    "fpr_medium_umbrella_legit": 0.08108108108108109
+  },
+  "device_weights_bits": 8,
+  "model_bytes": 262440,
+  "popular_list": {
+    "domains": 10000,
+    "abused_hosts": 257,
+    "boundaries": 620,
+    "excluded_platforms": 25,
+    "largest_excluded_platforms": [
+      [
+        "godaddysites.com",
+        731
+      ],
+      [
+        "weebly.com",
+        533
+      ],
+      [
+        "glitch.me",
+        468
+      ],
+      [
+        "myportfolio.com",
+        226
+      ],
+      [
+        "aliyuncs.com",
+        219
+      ],
+      [
+        "usrfiles.com",
+        161
+      ],
+      [
+        "jimdosite.com",
+        101
+      ],
+      [
+        "000webhostapp.com",
+        92
+      ],
+      [
+        "mystrikingly.com",
+        58
+      ],
+      [
+        "rf.gd",
+        57
+      ]
+    ],
+    "file_bytes": 170459
+  },
+  "openphish": {
+    "files": [
+      "openphish-2026-10-06.txt"
+    ],
+    "unique_hosts": 245,
+    "unseen_hosts": 242,
+    "on_popular_domains": 3,
+    "tpr_high_all": 0.7755102040816326,
+    "tpr_medium_all": 0.8734693877551021,
+    "tpr_high_unseen": 0.7768595041322314,
+    "tpr_medium_unseen": 0.871900826446281,
+    "tpr_high_unseen_with_popular": 0.7644628099173554,
+    "tpr_medium_unseen_with_popular": 0.859504132231405
+  },
+  "golden": {
+    "rows": 254,
+    "matrix_vs_reference_max_difference": 2.7755575615628914e-16
+  }
+}
