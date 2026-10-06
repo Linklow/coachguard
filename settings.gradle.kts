@@ -24,3 +24,4 @@ rootProject.name = "coachguard"
 
 include(":coachguard")
 include(":coachguard-links")
+include(":sample")
