@@ -1,0 +1,13 @@
+# Store text with LF line endings so diffs and checksums are the same on every platform.
+* text=auto eol=lf
+
+# Windows scripts need CRLF.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binary files.
+*.bin binary
+*.jar binary
+*.png binary
+*.aar binary
+*.apk binary

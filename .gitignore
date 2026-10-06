@@ -1,0 +1,24 @@
+# Gradle
+.gradle/
+build/
+.kotlin/
+
+# Local machine configuration (SDK path, signing secrets)
+local.properties
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+captures/
+.externalNativeBuild/
+.cxx/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# ML workspace (datasets and virtual environment are not committed)
+ml/.venv/
+ml/data/
+__pycache__/
+ml/reports-train.log

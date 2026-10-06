@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Both permissions are "normal" (granted at install time, no runtime prompt).
+        DETECT_SCREEN_RECORDING lets the SDK know when the app's screen is being recorded or
+        shared (Android 15+). HIDE_OVERLAY_WINDOWS is needed only if the host app opts in to
+        hiding overlay windows during a session (Android 12+).
+        A host app can drop either one with tools:node="remove"; the SDK then reports the
+        related signal as UNKNOWN instead of failing.
+    -->
+    <uses-permission android:name="android.permission.DETECT_SCREEN_RECORDING" />
+    <uses-permission android:name="android.permission.HIDE_OVERLAY_WINDOWS" />
+
+    <!--
+        Package visibility (Android 11+) for remote-access tools that let another person see or
+        control this device. Only these exact packages become visible; the SDK does not need
+        QUERY_ALL_PACKAGES. Keep in sync with KnownRemoteAccessApps.
+    -->
+    <queries>
+        <package android:name="com.anydesk.anydeskandroid" />
+        <package android:name="com.anydesk.adcontrol.ad1" />
+        <package android:name="com.teamviewer.quicksupport.market" />
+        <package android:name="com.teamviewer.host.market" />
+        <package android:name="com.carriez.flutter_hbb" />
+        <package android:name="com.sand.airdroid" />
+        <package android:name="com.sand.airdroidbiz" />
+        <package android:name="com.sand.aircast" />
+        <package android:name="com.zoho.assist.agent" />
+        <package android:name="com.splashtop.sos" />
+        <package android:name="com.splashtop.streamer.addon.knox" />
+        <package android:name="com.realvnc.server" />
+    </queries>
+</manifest>
