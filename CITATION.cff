@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use CoachGuard in research or in a product, please cite it as below."
+type: software
+title: "CoachGuard: on-device detection of coached payment scams for Android"
+abstract: >-
+  An open-source Android SDK that detects authorized push payment (coached payment) scams on the
+  device: call, screen-capture and remote-access signals, a per-user behavioral model and an
+  explainable risk score, plus an on-device phishing link classifier.
+authors:
+  - given-names: Ivan
+    family-names: Mishchenko
+version: 1.0.0
+date-released: "2026-10-06"
+license: Apache-2.0
+repository-code: "https://github.com/Linklow/coachguard"
+url: "https://github.com/Linklow/coachguard"
+keywords:
+  - android
+  - fraud detection
+  - authorized push payment fraud
+  - phishing detection
+  - on-device machine learning
+  - explainable AI
