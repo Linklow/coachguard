@@ -44,7 +44,8 @@ dependencies {
 ```
 
 Both need Android 7.0 (API 24) or later and depend only on the Kotlin standard library, which
-Kotlin apps already include. Each release also includes a demo APK.
+Kotlin apps already include. They are built with Kotlin 2.3, so Kotlin apps need Kotlin 2.2 or
+later; Java apps work as is. Each release also includes a demo APK.
 
 | Module | What it is | Size |
 |---|---|---|
