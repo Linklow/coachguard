@@ -5,7 +5,8 @@ All notable changes to this project are documented here. The project follows
 
 ## 1.0.0 - 2026-10-06
 
-First public release.
+First public release, available on Maven Central as `io.github.linklow:coachguard` and
+`io.github.linklow:coachguard-links`.
 
 ### `coachguard`
 

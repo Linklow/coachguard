@@ -1,6 +1,7 @@
 # CoachGuard
 
 [![CI](https://github.com/Linklow/coachguard/actions/workflows/ci.yml/badge.svg)](https://github.com/Linklow/coachguard/actions/workflows/ci.yml)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.linklow/coachguard)](https://central.sonatype.com/artifact/io.github.linklow/coachguard)
 [![Release](https://img.shields.io/github/v/release/Linklow/coachguard)](https://github.com/Linklow/coachguard/releases)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 ![Min SDK](https://img.shields.io/badge/minSdk-24-brightgreen.svg)
@@ -33,19 +34,22 @@ cooling-off delay.
 
 ## Installation
 
-The libraries are not on Maven Central yet. Until they are, download the AARs from the
-[latest release](https://github.com/Linklow/coachguard/releases/latest) and add them to your app:
+The libraries are on Maven Central:
 
 ```kotlin
 dependencies {
-    implementation(files("libs/coachguard-1.0.0.aar"))
-    implementation(files("libs/coachguard-links-1.0.0.aar")) // optional: phishing link check
+    implementation("io.github.linklow:coachguard:1.0.0")
+    implementation("io.github.linklow:coachguard-links:1.0.0") // optional: phishing link check
 }
 ```
 
 Both need Android 7.0 (API 24) or later and depend only on the Kotlin standard library, which
 Kotlin apps already include. They are built with Kotlin 2.3, so Kotlin apps need Kotlin 2.2 or
-later; Java apps work as is. Each release also includes a demo APK.
+later; Java apps work as is. Artifacts are signed with the key
+`E018 4B53 8FA6 BBCF D2E6 13CF 56BA 598C 6809 FAF3`.
+
+Each [release](https://github.com/Linklow/coachguard/releases/latest) also has the AARs for manual
+installation and a demo APK.
 
 | Module | What it is | Size |
 |---|---|---|
@@ -266,7 +270,6 @@ extra confirmation step. Avoid hard blocks based on the score alone.
 - Feed the link check into the payment risk score
 - User study of the behavioral model (protocol in [docs/behavior-model.md](docs/behavior-model.md))
 - Continuous monitoring (callbacks when a call starts or screen sharing begins mid-session)
-- Maven Central release
 
 ## Project structure
 
