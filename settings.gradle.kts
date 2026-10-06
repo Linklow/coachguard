@@ -23,3 +23,4 @@ dependencyResolutionManagement {
 rootProject.name = "coachguard"
 
 include(":coachguard")
+include(":coachguard-links")
