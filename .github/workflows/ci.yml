@@ -1,0 +1,70 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  android:
+    name: Build, test and lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Validate Gradle wrapper
+        uses: gradle/actions/wrapper-validation@v6
+
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: gradle/actions/setup-gradle@v6
+
+      - name: Unit tests
+        run: ./gradlew :coachguard:testDebugUnitTest :coachguard-links:testDebugUnitTest
+
+      - name: Lint (warnings are errors)
+        run: ./gradlew :coachguard:lintRelease :coachguard-links:lintRelease
+
+      - name: Assemble libraries and sample
+        run: ./gradlew :coachguard:assembleRelease :coachguard-links:assembleRelease :sample:assembleDebug
+
+      - name: Upload libraries
+        uses: actions/upload-artifact@v7
+        with:
+          name: aar
+          path: |
+            coachguard/build/outputs/aar/*.aar
+            coachguard-links/build/outputs/aar/*.aar
+
+      - name: Upload test and lint reports
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: reports
+          path: |
+            **/build/reports/
+            **/build/test-results/
+
+  feature-spec:
+    name: Feature specification (Python)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Check url_features.py
+        run: python ml/test_url_features.py
