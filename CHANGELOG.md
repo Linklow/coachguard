@@ -3,6 +3,11 @@
 All notable changes to this project are documented here. The project follows
 [Semantic Versioning](https://semver.org/).
 
+## Unreleased
+
+- On-device benchmarks in a minified `benchmark` build of the sample app, with results from a
+  budget phone in `docs/performance.md`.
+
 ## 1.0.0 - 2026-10-06
 
 First public release, available on Maven Central as `io.github.linklow:coachguard` and

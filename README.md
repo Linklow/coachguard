@@ -247,6 +247,20 @@ while paying are not being scammed. Effective responses include a clear warning 
 never ask you to move money while on a call"), a short delay before high-risk transfers, or an
 extra confirmation step. Avoid hard blocks based on the score alone.
 
+## Performance
+
+Measured in a minified release build on a budget phone (Redmi 10 2022, Helio G88, Android 13),
+median of three runs:
+
+| Operation | Median |
+|---|---:|
+| `GuardSession.assess` when the user confirms | 1.9 ms |
+| Session with stored profile: open, assess, close | 3.8 ms |
+| `PhishingLinkClassifier.assess` | 0.54 ms |
+| `PhishingLinkClassifier.create` (once, off the main thread) | 16 ms |
+
+Method, percentiles and how to reproduce: [docs/performance.md](docs/performance.md).
+
 ## Limitations
 
 - **Heuristic weights.** The defaults are not yet fitted to labelled fraud data.
@@ -277,9 +291,9 @@ extra confirmation step. Avoid hard blocks based on the score alone.
 |---|---|
 | [`coachguard/`](coachguard) | Core SDK: signals, behavioral model, risk engine |
 | [`coachguard-links/`](coachguard-links) | Phishing link classifier and its bundled model |
-| [`sample/`](sample) | Demo app with a payment confirmation screen and a link checker |
+| [`sample/`](sample) | Demo app with a payment confirmation screen and a link checker; on-device benchmarks in `src/benchmark` |
 | [`ml/`](ml) | Training pipeline, feature specification and model report |
-| [`docs/`](docs) | Method descriptions |
+| [`docs/`](docs) | Method descriptions and performance measurements |
 
 ## Building
 

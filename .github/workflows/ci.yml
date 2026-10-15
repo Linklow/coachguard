@@ -38,7 +38,7 @@ jobs:
         run: ./gradlew :coachguard:lintRelease :coachguard-links:lintRelease
 
       - name: Assemble libraries and sample
-        run: ./gradlew :coachguard:assembleRelease :coachguard-links:assembleRelease :sample:assembleDebug
+        run: ./gradlew :coachguard:assembleRelease :coachguard-links:assembleRelease :sample:assembleDebug :sample:assembleBenchmark
 
       - name: Upload libraries
         uses: actions/upload-artifact@v7

@@ -27,6 +27,12 @@ android {
             // installed to check that the SDK survives R8.
             signingConfig = signingConfigs.getByName("debug")
         }
+        // A release build plus the on-device benchmarks in src/benchmark. Debuggable builds run
+        // much slower code, so overhead is measured on a build like the one apps ship.
+        create("benchmark") {
+            initWith(getByName("release"))
+            matchingFallbacks += "release"
+        }
     }
 
     compileOptions {
