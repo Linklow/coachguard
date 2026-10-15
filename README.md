@@ -6,6 +6,7 @@
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 ![Min SDK](https://img.shields.io/badge/minSdk-24-brightgreen.svg)
 ![Kotlin](https://img.shields.io/badge/Kotlin-2.3-7F52FF.svg)
+[![Paper DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23404966.svg)](https://doi.org/10.5281/zenodo.23404966)
 
 On-device detection of **coached payments** for Android banking and fintech apps.
 
@@ -304,6 +305,15 @@ Requires JDK 17+ and the Android SDK (platform 36 for the libraries, 37 for the 
 ./gradlew :coachguard:lintRelease :coachguard-links:lintRelease
 ./gradlew :sample:installDebug
 ```
+
+## Paper
+
+The design and evaluation are described in a preprint:
+
+> I. Mishchenko, "CoachGuard: On-Device, Explainable Detection of Coached Payment Scams on
+> Android," preprint, Zenodo, 2026. [doi:10.5281/zenodo.23404966](https://doi.org/10.5281/zenodo.23404966)
+
+GitHub's *Cite this repository* button gives the same reference in BibTeX and APA.
 
 ## Security
 
